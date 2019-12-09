@@ -17,7 +17,11 @@ export class AppComponent  {
   }
   ngAfterViewInit(){
     // print array of CustomComponent objects
-    console.log(this.tables.toArray());
+    console.log("1",this.tables.toArray());
+    console.log("datos del array de referencias")
+    this.tables.toArray().forEach(el => {
+        console.log("referencias: :)",el);
+  });
     console.log("cantidad de elementos referenciados del array: "+this.tables.toArray().length);
 }
     chunks(array, size) {
