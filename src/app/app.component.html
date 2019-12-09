@@ -10,3 +10,30 @@
     <td>{{eventChunks}}</td>
   </tr>
 </table>
+
+<!-- <table>
+  <tr>
+    <th>numeros</th>
+  </tr>
+  <tr  *ngFor="let eventChunks of data[0];">
+    <td>{{eventChunks}}</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>numeros</th>
+  </tr>
+  <tr  *ngFor="let eventChunks of data[1];">
+    <td>{{eventChunks}}</td>
+  </tr>
+</table> -->
+<table *ngFor="let eventChunks of data; let i = index">
+  <tr>
+    <th>numeros</th>
+  </tr>
+  <tr  *ngFor="let eventChunks of data[i]; let i = index" [attr.data-index]="i">
+
+    <td>{{eventChunks}} --- {{i}}</td>
+  </tr>
+</table>
