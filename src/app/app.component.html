@@ -28,9 +28,12 @@
     <td>{{eventChunks}}</td>
   </tr>
 </table> -->
-<table *ngFor="let eventChunks of data; let i = index">
-  <tr>
-    <th>numeros</th>
+<table *ngFor="let eventChunks of data; let i = index;" #table>
+  <tr *ngIf="i === data.length-1" >
+    <th >Valores</th>
+  </tr>
+  <tr *ngIf="i === 0" >
+    <th >numeros</th>
   </tr>
   <tr  *ngFor="let eventChunks of data[i]; let i = index" [attr.data-index]="i">
 

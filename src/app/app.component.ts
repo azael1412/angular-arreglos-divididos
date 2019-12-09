@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -7,13 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+  @ViewChildren('table') tables:QueryList<ElementRef>;
   events = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
   total : number = 0;
   data : any = [];
-  totatData : number = 0;
+  totalData : number = 0;
    constructor(){
     this.events = this.chunks(this.events,8);
   }
+  ngAfterViewInit(){
+    // print array of CustomComponent objects
+    console.log(this.tables.toArray());
+    console.log("cantidad de elementos referenciados del array: "+this.tables.toArray().length);
+}
     chunks(array, size) {
       let results = [];
        results = [];
