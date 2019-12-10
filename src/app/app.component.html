@@ -30,13 +30,14 @@
 </table> -->
 <table *ngFor="let eventChunks of data; let i = index;" #table>
   <tr *ngIf="i === data.length-1" >
-    <th >Valores</th>
+    <th >Valores {{data[data.length-1].length }}</th>
   </tr>
   <tr *ngIf="i === 0" >
-    <th >numeros</th>
+    <th >numeros {{data[0].length}}</th>
   </tr>
+ <!-- <p>{{data[data.length-1].length-1 +1}}</p> -->
   <tr  *ngFor="let eventChunks of data[i]; let i = index" [attr.data-index]="i">
 
-    <td>{{eventChunks}} --- {{i}}</td>
+    <td >{{eventChunks}} </td>
   </tr>
 </table>
